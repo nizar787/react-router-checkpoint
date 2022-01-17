@@ -1,0 +1,320 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400);
+.App {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0d0d0e;
+}
+.movie {
+  overflow: hidden;
+}
+.movie h1 {
+  font-size: 20px;
+  text-align: center;
+}
+.Nav {
+  position: relative;
+  background-color: #0f2347;
+  height: 56px;
+  box-sizing: border-box;
+  padding: 10px 80px;
+}
+
+.App-header > h2 {
+  margin: 0;
+  color: #c3d8fd;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.App-header > h2:hover {
+  color: #fff;
+}
+
+.search {
+  position: absolute;
+  top: 12px;
+  right: 90px;
+}
+
+.search > input[type="text"] {
+  border: none;
+  padding: 8px 14px;
+  color: #666;
+  width: 230px;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+  background-color: #c3d8fd;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.search > input[type="text"]:focus {
+  outline: none;
+}
+
+.search > input[type="submit"] {
+  border: none;
+  padding: 8px 14px;
+  color: #c3d8fd;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+  background-color: #2e67a0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.search > input[type="submit"]:hover {
+  background-color: #1c3f6e;
+  color: #fff;
+}
+
+.search > input[type="submit"]:focus {
+  outline: none;
+}
+
+.App-intro {
+  font-size: 32px;
+  color: #2e67a0;
+  font-weight: 600;
+  padding: 8px 80px;
+}
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movies > .loader {
+  border: 12px solid #f3f3f3;
+  border-top: 12px solid #2e67a0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+.movies > .movie {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  margin: 1em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.movies > .movie:hover {
+  box-shadow: 0 0 24px 0 rgba(110, 108, 108, 0.5);
+}
+
+.movies > .movie > div > img {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+}
+
+.movies > .movie > p {
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 250px;
+  height: 50px;
+  margin: 0;
+  text-align: center;
+  padding: 12px 0;
+  font-weight: 600;
+  color: #fff;
+  background-color: #10101f;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (min-width: 694px) and (max-width: 915px) {
+  .movie {
+    max-width: 33%;
+  }
+}
+
+@media screen and (min-width: 652px) and (max-width: 693px) {
+  .movie {
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 651px) {
+  .movie {
+    max-width: 100%;
+    margin: auto;
+  }
+}
+
+/* 1 */
+:root {
+  --font-color: #333;
+  --background-color: #eee;
+  --link-color: cornflowerblue;
+}
+
+/* 2 */
+[data-theme="dark"] {
+  --font-color: #eee;
+  --background-color: #333;
+  --link-color: lightblue;
+}
+
+/* 3 */
+body {
+  background-color: var(--background-color);
+  color: var(--font-color);
+}
+
+a {
+  color: var(--link-color);
+}
+
+/* Custom Dark Mode Toggle Element */
+.toggle-theme-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.toggle-theme-wrapper span {
+  font-size: 28px;
+}
+
+.toggle-theme {
+  position: relative;
+  display: inline-block;
+  height: 34px;
+  width: 60px;
+}
+
+.toggle-theme input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  position: absolute;
+  cursor: pointer;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: 0.2s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+input:checked + .slider {
+  background-color: cornflowerblue;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.modal-box {
+  display: none;
+
+  position: absolute;
+
+  z-index: 1000;
+
+  width: 98%;
+
+  background: white;
+
+  border-bottom: 1px solid #aaa;
+
+  border-radius: 4px;
+
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  background-clip: padding-box;
+}
+
+.test {
+  background-color: #ccc;
+  color: black;
+}
+.button {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgba(220, 0, 0, 1);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  position: relative;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.button:hover {
+  background-color: rgba(255, 0, 0, 1);
+}
+
+.button:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* background-color: #4e534f; Green 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+   font-size: 16px; */
+.mov {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d0d0e;
+  color: white;
+  text-align: center;
+  height: 100vh;
+}
+.mov img {
+  width: 300px;
+}
